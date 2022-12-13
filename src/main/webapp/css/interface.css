@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+}
+:root{
+    /*===== Colores =====*/
+    --first-color: #1ABC9C;
+    --bg-color: #3D3D3D;
+    --white-color: #FFF;
+    
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+.clear
+    {
+        clear: both;
+    }
+
+
+body{
+    padding: 0;
+    margin: 0;
+}
+/*===== Start body background color =====*/
+.body_background{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(50deg,var(--bg-color),var(--first-color)) ;
+
+}
+/*===== End body background color =====*/
+/*===== Start header 2 =====*/
+h2{
+    font-family: var(--body-font);
+    position: absolute;
+    top:25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var( --white-color);
+    text-transform: uppercase;
+    margin: 0;
+
+}
+/*===== End header 2 =====*/
+/*===== Start div squars =====*/
+.squars div{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 6px solid rgba(255,255,255,0.8);
+    /* border-radius: 50%; */
+}
+.squars div:nth-child(1){
+    top:12%;
+    left: 42%;
+    animation: squarmove 7s linear infinite;
+
+}
+.squars div:nth-child(2){
+    top:70%;
+    left: 50%;
+    animation: squarmove 9s linear infinite;
+}
+.squars div:nth-child(3){
+    top:17%;
+    left: 6%;
+    animation: squarmove 9s linear infinite;
+}
+.squars div:nth-child(4){
+    top:20%;
+    left: 60%;
+    animation: squarmove 10s linear infinite;
+}
+.squars div:nth-child(5){
+    top:50%;
+    left: 10%;
+    animation: squarmove 17s linear infinite;
+}
+.squars div:nth-child(6){
+    top:80%;
+    left: 70%;
+    animation: squarmove 12s linear infinite;
+}
+.squars div:nth-child(7){
+    top:60%;
+    left: 80%;
+    animation: squarmove 15s linear infinite;
+}
+.squars div:nth-child(8){
+    top:32%;
+    left: 25%;
+    animation: squarmove 16s linear infinite;
+}
+.squars div:nth-child(9){
+    top:90%;
+    left: 25%;
+    animation: squarmove 9s linear infinite;
+}
+.squars div:nth-child(10){
+    top:20%;
+    left: 80%;
+    animation: squarmove 5s linear infinite;
+}
+.squars div:nth-child(11){
+    top:90%;
+    left: 5%;
+    animation: squarmove 8s linear infinite;
+}
+.squars div:nth-child(12){
+    top:95%;
+    left: 95%;
+    animation: squarmove 7s linear infinite;
+}
+.squars div:nth-child(13){
+    top:50%;
+    left: 90%;
+    animation: squarmove 8s linear infinite;
+}
+/*===== End div squars =====*/
+/*===== Start squarmove animation =====*/
+@keyframes squarmove{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}
+/*===== End squarmove animation =====*/
+/*===== Start media query =====*/
+@media(max-width:768px){
+    h2{
+        font-size: 2rem;
+    }
+}
+@media(max-width:576px){
+    h2{
+        font-size: 1.3rem;
+    }
+}
+/*===== End media query =====*/
+/*===== Start button design =====*/
+
+.links{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-around; */
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* flex-direction: row; */
+    /* background: var(--bg-color); */
+}
+.links a{
+    min-width: 45vh;
+    /* flex-wrap: nowrap; */
+    /* flex-direction: row; */
+    text-align: center;
+    background: var(--bg-color);
+    position: relative;
+    padding: 15px 30px;
+    /* justify-content: space-around; */
+    margin: 5%;
+    margin-top: 10%;
+    color: var(--white-color);
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background:rgba(255,255,255,0.1);
+}
+a:hover{
+    text-decoration: none;
+    color: var(--white-color);
+    text-shadow: 1px 1px 1px var(--white-color);
+}
+a svg,
+a svg rect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill:transparent;
+    transition: 0.5s;
+}
+a svg rect{
+    stroke-width: 5;
+    stroke: var(--first-color);
+    stroke-dasharray: 165;
+}
+a svg:hover{
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.288);
+}
+/*===== End button design =====*/
+/*===== Start border animate animation =====*/
+/* @keyframes border_animate{
+    0%{
+        stroke-dashoffset: 600;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+} */
+
+/*===== End border animate animation =====*/
+/*===== Start button media query =====*/
+@media(max-width:576px){
+    .links{
+        flex-direction: column;
+        font-size: 1rem;
+    }
+    .links a{
+        min-width: 40vh;
+    }
+    .links a:nth-child(1){
+        margin-top: 20%;
+    }
+   
+}
+/*===== End button media query =====*/

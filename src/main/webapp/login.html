@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Log in </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="main_card">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="leftCard">
+                        <form action="/CollegeSchedule_war/Login" method="post">
+                            <header>Log In</header>
+                            <div class="form-group">
+                                <i class="fas fa-envelope"></i>
+                                <input class="inputs" type="text" placeholder="Email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <input class="inputs" type="password" placeholder="Password" id="password" name="password" required>
+                            </div>
+                            <input type="submit" class="btnn" value="Submit"> 
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rightCard">
+                        <div class="card_content">
+                            <header>Hello</header>
+                            <p>Only the administrator can access the modification of the data and so on,
+                                so if you are not the administrator,
+                                you can click the button below to see the study schedules
+                            </p>
+                            <a href="/CollegeSchedule_war/userShow" class="btnn_out">Show Schedule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href ="interface.html" style="margin-top: 20px;margin-left: -250px;" class="btn regenerate rounded" type="submit"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        </div>
+    </div>
+
+
+
+    <!--**************************************** START FRAMEWORKS  ***********************************-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <!--**************************************** END FRAMEWORKS  ***********************************-->
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+:root{
+    --header-height: 3rem;
+    --nav-width: 90px;
+
+    /*===== Colores =====*/
+    --first-color: #1abc9c;
+    --bg-color: #3d3d3d;
+    --white-color: #FFF;
+
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --range-cell-size:150px;
+
+    /*===== z index =====*/
+    --z-fixed: 100;
+
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+    background-image: linear-gradient(to bottom right ,var(--first-color), var(--bg-color));
+    overflow-x:hidden;
+    overflow-y: auto;
+    z-index: var(--z-fixed);
+}
+.vertical-nav::-webkit-scrollbar{
+    width: 0.0rem;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0.2rem;
+    margin-left:1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    margin-left:1rem;
+}
+.active-click ,.nav-link:hover{
+    background:var(--first-color);
+}
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+    padding: 1rem 3rem 3rem 3rem;
+}
+#sidebar.active {
+    margin-left: -17rem;
+}
+
+#content.active {
+    width: 100%;
+    margin: 0;
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+.text-gray {
+    color: #aaa;
+}
+.color_text {
+    color:var(--white-color);
+}
+.color_text:hover {
+    color:var(--white-color);
+}
+.nav-link{
+    text-transform: capitalize;
+}
+.sidebarCollapse_background{
+    background-color:var(--first-color);
+    color:var(--white-color);
+}
+@media (max-width:768px){
+    #sidebar {
+        margin-left: -17rem;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+    #sidebarCollapse.active {
+        margin-left: 10rem;
+        transition: 0.5s all;
+    }
+}
+@media (max-width:425px){
+    #sidebarCollapse.active {
+        margin-left: 12rem;
+        transition: 0.5s all;
+    }
+    .page-content {
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+}
+/*------------------------------- Start Table Styling -------------------------------------- */
+a.regenerate{
+    background: var(--first-color);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.table-wrapper{
+    background:var(--white-color);
+    padding: 3%;
+    margin:3%;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.247) ;
+}
+/*----------------- Start Title Table ------------------ */
+.table-title{
+    background: linear-gradient(40deg,var(--first-color),var(--bg-color));
+    color: var(--white-color);
+    padding:2% 3%;
+    margin:-5% -6% 2%;
+    border-radius: 1px 1px 0 0 ;
+    box-shadow: 0 1px 1px rgba(0,0,0,.247) ;
+}
+.table-title .top-title a{
+    margin:-2% 0 0;
+    font-size: 150%;
+    float: left;
+    text-decoration: none;
+    color: var(--white-color);
+}
+.table-title .top-title{
+    margin-top: 1.5%;
+}
+.table-title a{
+    float: left;
+    font-size: 130%;
+    margin-left: 3.5%;
+}
+/* ** */
+.table-title a.edit, .table tbody tr td form a.edit{
+    color: #FFC107;
+}
+.table-title a .add{
+    color:#15a864;
+}
+.table-title a .delete{
+    color: #F44336;
+}
+.table-title a .print{
+    color:#2962ff;
+    cursor: pointer;
+}
+/* ** */
+.table-title form {
+    width: 60%;
+    float: right;
+}
+
+.table-title form.show-form{
+    width: 100%;
+}
+/* ** */
+@media (max-width:576px){
+    .table-title a{
+        margin-top: 7%;
+        margin-left: 10%;
+    }
+    .table-title .press-btn{
+        margin-left:25%;
+    }
+    .table-title .press-btn-admin{
+        margin-left:33%;
+    }
+    .table-title form input{
+        width: 50%;
+    }
+    .table-title form {
+        width: 100%;
+        padding-top: 2%;
+    }
+    .table-title form button{
+        width: 45%;
+        font-size: 90%;
+    }
+}
+@media (max-width:425px){
+    .table-title form input{
+        width: 90%;
+    }
+    .table-title form button{
+        width: 50%;
+    }
+}
+@media (max-width:375px){
+    .table-title a{
+        font-size: 120%;
+    }
+    .table-title form button{
+        font-size: 80%;
+    }
+}
+/*----------------- End Title Table ------------------ */
+/*----------------- Start Body Table ------------------ */
+.btn-border {
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
+}
+.search-border {
+    border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+.table.sticky th,
+.table .head-show-sticky th{
+    position: sticky;
+    top:0;
+    background:var(--white-color);
+}
+
+/* start show table */
+.table .subhead-show-after th{
+    background: linear-gradient(40deg,var(--first-color),var(--bg-color));
+    color: white;
+    font-weight: bold;
+}
+.table.show-table tr td{
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+.table.show-table tr td:first-child{
+    background-color: #f1f1f1;
+    font-weight: bold;
+    border: 1px solid white;
+
+}
+.about-ul {
+    list-style-type: none;
+}
+.about-ul .about{
+    background-image: linear-gradient(to top left ,var(--first-color), var(--bg-color));
+    color:white;
+    padding:10px;
+    text-transform: capitalize;
+}
+.inseted_ul{
+    padding:5px 20px;
+}
+/* End show table */
+.table.sticky th:after,
+.table .head-show-sticky th::after{
+    content:'';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:var(--first-color);
+}
+.table-title form input{
+    width: 80%;
+}
+table.table tbody tr td:last-child{
+    min-width: 80px;
+}
+.scroll-two{
+    overflow: auto;
+    height: 600px;
+}
+.scroll-one{
+    overflow: auto;
+    height: 1000px;
+}
+.scroll::-webkit-scrollbar{
+    height: 3px;
+}
+.scroll .range-cell{
+    min-width:var(--range-cell-size);
+    text-transform: capitalize;
+}
+.scroll .range-cell2{
+    min-width:195px;
+    text-transform: capitalize;
+}
+.scroll .range-cell3{
+    min-width:200px;
+    text-transform: capitalize;
+}
+.scroll .range-cell-Action{
+    min-width:100px;
+}
+table.table tbody tr td:first-child{
+    min-width: 50px;
+}
+table.table tr th,
+table.table tr td{
+    border-color: var(--white-color);
+    padding:1.2%;
+    vertical-align: middle;
+}
+table.table tr th:first-child{
+    width:50px;
+}
+table.table tr th:last-child{
+    width:10%;
+}
+table.ttable-striped tbody tr:nth-of-type(odd){
+    background-color:#3d3d3d3a;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background:  #3d3d3d3a;
+}
+table.table th {
+    font-size: 110%;
+    margin: 0 2%;
+    cursor: pointer;
+}
+table.table td,
+table.table td form button{
+    cursor: pointer;
+}
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 130%;
+    margin: 0 10%;
+}
+table.table td a,
+table.table td button {
+    font-weight: bold;
+    color:var(--first-color);
+    display: inline-block;
+    text-decoration: none;
+    outline: none !important;
+}
+table.table td button {
+    background-color: transparent;
+    border: 0;
+}
+table.table td a:hover {
+    color: var(--first-color);
+}
+table.table td button.delete {
+    color: #F44336;
+}
+table.ttable-striped tbody tr:nth-of-type(odd){
+    background-color:#3d3d3d3a;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background:  #3d3d3d3a;
+}
+table.table th {
+    font-size: 110%;
+    margin: 0 2%;
+    cursor: pointer;
+}
+table.table td{
+    cursor: pointer;
+}
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 130%;
+    margin: 0 10%;
+}
+table.table td a {
+    font-weight: bold;
+    color:var(--first-color);
+    display: inline-block;
+    text-decoration: none;
+    outline: none !important;
+}
+table.table td a:hover {
+    color: var(--first-color);
+}
+table.table td a.delete {
+    color: #F44336;
+}
+
+/*----------------- End Body Table ------------------ */
+
+/*----------------- Start form (Modal) style ------------------ */
+.modal .modal-dialog {
+    max-width: 55%;
+}
+@media (max-width:576px){
+    .modal .modal-dialog {
+        max-width: 90%;
+    }
+    .modal{
+        margin-left: 4%;
+    }
+    .modal .modal-dialog .modal-content form .modal-header h4{
+        font-size: 145%;
+    }
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+    padding: 3%;
+}
+.modal .modal-content {
+    border-radius: 0.5%;
+}
+.modal .modal-footer {
+    background: #ecf0f1;
+    border-radius: 0 0 1px 1px;
+}
+.modal .modal-title {
+    display: inline-block;
+}
+.modal .form-control {
+    border-radius: 1px;
+    box-shadow: none;
+    border-color: #dddddd;
+}
+.modal textarea.form-control {
+    resize: vertical;
+}
+.modal .btn {
+    border-radius: 1px;
+    min-width: 20%;
+}
+.modal form label {
+    font-weight: normal;
+}
+.table-title form .show-search {
+    display: inline-block;
+}
+/* -------------------------------------- Start Show Schedualing Styling -------------------------------------- */
+@media (max-width:576px) {
+    .table-title form .sched_input{
+        width: 70%;
+    }
+    .table-title form .sched_button{
+        width: 30%;
+    }
+}
+/* -------------------------------------- End Show Schedualing Styling -------------------------------------- */
+/*----------------- End form (Modal) style ------------------ */
+
+/* -------------------------------------- Start User Interface Styling -------------------------------------- */
+.user-interface{
+    max-width: 1300px;
+}
+.inner{
+    overflow:auto;
+}
+
+.user_table a {
+    font-size: 100%;
+}
+::-webkit-scrollbar {
+    width: 0.2rem;
+    height: 3px;
+}
+/* -------------------------------------- End User Interface Styling -------------------------------------- */
+
+/*------------------------------- End Table Styling -------------------------------------- */
